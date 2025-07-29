@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sloty</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/index.js" defer></script>
+    <script src="./js/arm-pull.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="left-side flex1">
+            <img class="bgc-img-left" src="./bg-img/pngwing.com (1).png" alt="">
+        </div>
+
+
+        <div class="center">
+            <!-- <h1 class="hero-title">Грай - та вигравай</h1> -->
+
+            <div id="container">
+                <div class="window-border">
+                    <div class="window">
+                        <div class="outer-col">
+                            <div class="col"></div>
+                        </div>
+                        <div class="outer-col">
+                            <div class="col"></div>
+                        </div>
+                        <div class="outer-col">
+                            <div class="col"></div>
+                        </div>
+                        <div class="outer-col">
+                            <div class="col"></div>
+                        </div>
+                        <div class="outer-col">
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="slot-trigger">
+                    <div class="arm">
+                        <div class="knob"></div>
+                    </div>
+                    <div class="arm-shadow"></div>
+                    <div class="ring1">
+                        <div class="shadow"></div>
+                    </div>
+                    <div class="ring2">
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="right-side flex1">
+            <div class="win-condition-info">
+                <div class="combos-div">
+                    <div class="win-entry"><img src="items/cherry.png" alt="Cherry"><span>x3
+                            Cherry</span><strong>+50</strong></div>
+                    <div class="win-entry"><img src="items/lemon.png" alt="Lemon"><span>x4
+                            Lemon</span><strong>+80</strong></div>
+                    <div class="win-entry"><img src="items/grapes.png" alt="Grapes"><span>x5
+                            Grapes</span><strong>+150</strong></div>
+                    <div class="win-entry"><img src="items/watermelon.png" alt="Watermelon"><span>x3
+                            Watermelon</span><strong>+60</strong></div>
+                    <div class="win-entry"><img src="items/strawberry.png" alt="Strawberry"><span>x4
+                            Strawberry</span><strong>+90</strong></div>
+                    <div class="win-entry"><img src="items/banana.png" alt="Banana"><span>x3
+                            Banana</span><strong>+40</strong></div>
+                    <div class="win-entry"><img src="items/orange.png" alt="Orange"><span>x5
+                            Orange</span><strong>+120</strong></div>
+                    <div class="win-entry"><img src="items/pear.png" alt="Pear"><span>x4 Pear</span><strong>+75</strong>
+                    </div>
+                    <div class="win-entry"><img src="items/apple.png" alt="Apple"><span>x5
+                            Apple</span><strong>+130</strong></div>
+                    <div class="win-entry"><img src="items/lucky_seven.png" alt="Lucky Seven"><span>x3 Lucky
+                            Seven</span><strong>+300</strong></div>
+                </div>
+            </div>
+            <img class="right-side-img" src="./bg-img/pngwing.com (2).png" alt="">
+
+
+        </div>
+    </main>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Some general styling
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --item-height: 100px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.flex1 {
+    flex: 1;
+}
+
+main {
+    background: linear-gradient(#4c0082, #f703d2, #4c0082);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.left-side {
+    position: relative;
+}
+
+.bgc-img-left {
+    position: absolute;
+    object-fit: cover;
+    width: 170%;
+    left: -150px;
+    bottom: -20px;
+    animation: floatAround 4s ease-in-out infinite;
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(5px, -5px);
+    }
+
+    50% {
+        transform: translate(-5px, 5px);
+    }
+
+    75% {
+        transform: translate(5px, 5px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+
+
+
+
+
+
+#slot-trigger {
+    cursor: pointer;
+    height: 170px;
+    /* 85 × 2 */
+    right: -80px;
+    /* -40 × 2 */
+    top: 60px;
+    /* 30 × 2 */
+    position: absolute;
+    width: 74px;
+    /* 37 × 2 */
+}
+
+#slot-trigger div {
+    position: absolute;
+    top: 0;
+}
+
+#slot-trigger .ring1 {
+    border-radius: 0 4px 4px 0;
+    height: 100%;
+    left: 0;
+    width: 16px;
+    /* 8 × 2 */
+    z-index: 2;
+    background: linear-gradient(to bottom, #282828 0%, #959595 14%, #d1d1d1 37%, #bababa 49%, #959595 67%, #212121 100%);
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+#slot-trigger .ring1 .shadow {
+    border-radius: 0 4px 4px 0;
+    height: 100px;
+    /* 50% of 170px (container height) */
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    /* 10 × 2 */
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(149, 149, 149, 0.2) 0%, rgba(13, 13, 13, 0.18) 46%, rgba(1, 1, 1, 0.18) 50%, rgba(10, 10, 10, 0.18) 53%, rgba(78, 78, 78, 0.17) 76%, rgba(56, 56, 56, 0.16) 87%, rgba(27, 27, 27, 0.15) 100%);
+}
+
+#slot-trigger .ring2 {
+    border-radius: 0 4px 4px 0;
+    height: 136px;
+    /* 80% of 170px */
+    left: 16px;
+    /* 8 × 2 */
+    overflow: hidden;
+    top: 17px;
+    /* 10% of 170px */
+    width: 20px;
+    /* 10 × 2 */
+    z-index: 1;
+    background: linear-gradient(to bottom, #282828 0%, #959595 14%, #d1d1d1 37%, #bababa 49%, #959595 67%, #212121 100%);
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+#slot-trigger .ring2 .shadow {
+    border-radius: 0 4px 4px 0;
+    height: 85px;
+    /* 50% of 170px */
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(149, 149, 149, 0.15) 0%, rgba(13, 13, 13, 0.15) 46%, rgba(1, 1, 1, 0.15) 50%, rgba(10, 10, 10, 0.15) 53%, rgba(78, 78, 78, 0.15) 76%, rgba(56, 56, 56, 0.15) 87%, rgba(27, 27, 27, 0.15) 100%);
+}
+
+#slot-trigger .arm {
+    border-radius: 0 0 8px 8px;
+    height: 85px;
+    /* 50% of 170px */
+    left: 20px;
+    /* 10 × 2 */
+    top: -50px;
+    /* -25 × 2 */
+    width: 12px;
+    /* 6 × 2 */
+    z-index: 3;
+    overflow: visible !important;
+    transition: transform 0.3s ease;
+    transform-origin: top center;
+    background: linear-gradient(to right, #0d0d0d 0%, #4e4e4e 47%, #383838 87%, #1b1b1b 100%);
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+#slot-trigger .arm.pull {
+    transform: translateY(100px);
+    /* 50px × 2 */
+}
+
+#slot-trigger .arm .knob {
+    background: radial-gradient(ellipse at center, #ff6363 0%, #cf0404 100%);
+    border-radius: 20px;
+    /* 10 × 2 */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    height: 32px;
+    /* 16 × 2 */
+    left: -14px;
+    /* -7 × 2 */
+    top: -30px;
+    /* -15 × 2 */
+    width: 40px;
+    /* 20 × 2 */
+    z-index: 4;
+}
+
+#slot-trigger .arm-shadow {
+    background: #000;
+    border-radius: 20px;
+    bottom: 132px;
+    /* 66 × 2 */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    height: 12px;
+    /* 6 × 2 */
+    left: 18px;
+    /* 9 × 2 */
+    top: auto;
+    width: 16px;
+    /* 8 × 2 */
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+.right-side {
+
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+
+.win-condition-info {
+    max-width: 354px;
+}
+
+
+.combos-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+
+}
+
+.win-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    animation: popWin 0.4s ease;
+
+    img {
+        width: 32px;
+        height: 32px;
+    }
+
+    span {
+        flex: 1;
+        font-size: 12px;
+    }
+
+    strong {
+        font-size: 14px;
+        color: #00ff88;
+    }
+}
+
+@keyframes popWin {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+.right-side-img {
+    position: absolute;
+    object-fit: contain;
+    animation: floatAround2 4s ease-in-out infinite;
+}
+
+
+@keyframes floatAround2 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    20% {
+        transform: translate(-6px, 4px);
+    }
+
+    40% {
+        transform: translate(4px, -6px);
+    }
+
+    60% {
+        transform: translate(-4px, -4px);
+    }
+
+    80% {
+        transform: translate(6px, 6px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+/*
+ * Style the orange box
+ */
+
+
+.hero-title {
+    text-align: center;
+    font-size: 45px;
+    color: white;
+
+}
+
+
+.start-button {
+    display: block;
+    margin: 1em auto;
+}
+
+#container {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    aspect-ratio: 2.5 / 1;
+    padding: 10px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #00f0ff, #ff00f0, #8000ff);
+    background-size: 400% 400%;
+    animation: gradientGlow 6s ease infinite;
+    box-shadow:
+        0 0 10px #00f0ff,
+        0 0 20px #ff00f0,
+        0 0 30px #8000ff,
+        0 0 40px #00f0ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 200px;
+}
+
+.window-border {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    background-image: linear-gradient(to bottom, #fcf8ad, #f8f3cd, #f9e13d);
+    box-shadow: 0 6px 4px -5px #eca654 inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.window {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.window::before,
+.window::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    z-index: 2;
+}
+
+.window::before {
+    top: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.window::after {
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+}
+
+.outer-col {
+    flex: 1;
+    background-image: linear-gradient(#000055, #1a2bbf);
+    overflow-y: hidden;
+    height: calc(var(--item-height) * 3);
+
+    border-left: 2px solid #1a2bbf;
+
+    position: relative;
+
+}
+
+.outer-col:first-child {
+    border-left: none;
+}
+
+.col {
+    padding: 0 10px;
+    will-change: transform;
+    transform: translateY(calc(-100% + var(--item-height) * 3));
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    /* обов’язково: */
+
+
+
+    /* або без нього при ініціалізації */
+
+    position: absolute;
+
+    transform: translateY(0);
+
+
+}
+
+@keyframes scrollTo {
+  to {
+    transform: translateY(var(--scroll-distance));
+  }
+}
+
+
+
+.col img {
+    width: 100%;
+    height: auto;
+    margin: 5% 0;
+    position: relative;
+    z-index: 3;
+}
+
+.icon {
+    width: auto;
+    height: auto;
+    display: block;
+    position: relative;
+
+}
+
+.col .icon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    box-shadow: 0 0 35px 30px rgba(12, 0, 14, 0.69);
+    z-index: 2;
+    border-radius: 100%;
+}
+
+/* Спінінг */
+#container.spinning .outer-col:nth-of-type(2) .col {
+    animation-delay: 0.01s;
+}
+
+#container.spinning .outer-col:nth-of-type(3) .col {
+    animation-delay: 0.02s;
+}
+
+#container.spinning .outer-col:nth-of-type(4) .col {
+    animation-delay: 0.03s;
+}
+
+#container.spinning .col {
+    animation-name: scroll;
+
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.65, .97, .72, 1);
+}
+
+
+
+@keyframes scroll {
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.center {
+    flex: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const ICONS = [
+    'apple', 'apricot', 'banana', 'big_win', 'cherry', 'grapes', 'lemon', 'lucky_seven', 'orange', 'pear', 'strawberry', 'watermelon'
+];
+
+const BASE_SPINNING_DURATION = 2.7;
+const COLUMN_SPINNING_DURATION = 0.3;
+const ITEM_HEIGHT = 100; // в пікселях, має відповідати --item-height
+
+let cols;
+
+window.addEventListener('DOMContentLoaded', function () {
+    cols = document.querySelectorAll('.col');
+    setInitialItems();
+});
+
+function setInitialItems() {
+    const baseItemAmount = 40;
+
+    for (let i = 0; i < cols.length; ++i) {
+        const col = cols[i];
+        const amountOfItems = baseItemAmount + (i * 3);
+        let elms = '';
+        let firstThreeElms = '';
+
+        for (let x = 0; x < amountOfItems; x++) {
+            const icon = getRandomIcon();
+            const item = `<div class="icon" data-item="${icon}"><img src="items/${icon}.png"></div>`;
+            elms += item;
+            if (x < 3) firstThreeElms += item;
+        }
+
+        col.innerHTML = elms + firstThreeElms;
+
+        const totalIcons = amountOfItems + 3;
+        const totalHeight = totalIcons * ITEM_HEIGHT;
+        col.style.height = `${totalHeight}px`;
+        col.style.setProperty('--col-height', `${totalHeight}px`);
+
+        console.log(`col[${i}]: items=${totalIcons}, height=${totalHeight}px`);
+    }
+}
+
+function spin(elem) {
+    let baseDuration = BASE_SPINNING_DURATION + randomDuration();
+    console.log(`--- Spin start ---`);
+
+    for (let i = 0; i < cols.length; i++) {
+        const col = cols[i];
+
+        const icons = col.querySelectorAll('.icon').length;
+        const shift = (icons - 3) * ITEM_HEIGHT;
+
+        const duration = baseDuration + i * (COLUMN_SPINNING_DURATION + randomDuration());
+
+        // задаємо анімацію вручну
+        col.style.animation = `scrollTo ${duration}s cubic-bezier(.65, .97, .72, 1) 1`;
+        col.style.setProperty('--scroll-distance', `-${shift}px`);
+
+        console.log(`col[${i}] duration: ${duration.toFixed(2)}s`);
+
+        col.addEventListener('animationend', () => {
+            col.style.transform = `translateY(-${shift}px)`;
+            col.style.animation = '';
+            console.log(`col[${i}] animation ended`);
+        }, { once: true });
+    }
+
+    elem.setAttribute('disabled', true);
+    document.getElementById('container').classList.add('spinning');
+
+    setTimeout(setResult, BASE_SPINNING_DURATION * 1000 / 2);
+
+    setTimeout(() => {
+        document.getElementById('container').classList.remove('spinning');
+        elem.removeAttribute('disabled');
+        console.log('--- Spin end ---');
+    }, (baseDuration + cols.length * COLUMN_SPINNING_DURATION) * 1000);
+}
+
+
+function setResult() {
+    for (let i = 0; i < cols.length; i++) {
+        const col = cols[i];
+        const results = [getRandomIcon(), getRandomIcon(), getRandomIcon()];
+        const icons = col.querySelectorAll('.icon');
+
+        for (let x = 0; x < 3; x++) {
+            const html = `<img src="items/${results[x]}.png">`;
+            icons[x].innerHTML = html;
+            icons[x].setAttribute('data-item', results[x]);
+
+            const lastIndex = icons.length - 3 + x;
+            icons[lastIndex].innerHTML = html;
+            icons[lastIndex].setAttribute('data-item', results[x]);
+        }
+
+        console.log(`col[${i}] result:`, results);
+    }
+}
+
+function getRandomIcon() {
+    return ICONS[Math.floor(Math.random() * ICONS.length)];
+}
+
+function randomDuration() {
+    return Math.floor(Math.random() * 10) / 100;
+}
