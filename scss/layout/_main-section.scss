@@ -1,0 +1,27 @@
+main {
+    background: linear-gradient(#4c0082, #f703d2, #4c0082);
+    height: 100vh;
+    padding-top: 20px;
+    ;
+
+
+    background-image: url('../bg-img/pngwing.com\ \(3\).png');
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+.game {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    // gap: 80px;
+    height: calc(100% - var(--hero-title-height));
+}
+
+.left-side {
+    position: relative;
+}
+
+.right-side {
+    position: relative;
+}

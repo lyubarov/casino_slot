@@ -27,7 +27,7 @@
 <body>
 
     <main>
-        <h1 class="hero-title">Грай - та вигравай</h1>
+        <h1 class="hero-title">One Spin - Big Win!</h1>
         <div class="game">
             <div class="left-side ">
                 <img class="bgc-img-left" src="./bg-img/pngwing.com (1).png" alt="">
@@ -82,27 +82,19 @@
 
                 <div class="win-condition-info">
                     <div class="combos-div">
-                        <div class="win-entry"><img src="items/cherry.png" alt="Cherry"><span>x3
+                        <div class="win-entry"><img src="items/cherry.png" alt="Cherry"><span>x2
                                 Cherry</span><strong>+50</strong></div>
-                        <div class="win-entry"><img src="items/lemon.png" alt="Lemon"><span>x4
-                                Lemon</span><strong>+80</strong></div>
-                        <div class="win-entry"><img src="items/grapes.png" alt="Grapes"><span>x5
+                        <div class="win-entry"><img src="items/grapes.png" alt="Grapes"><span>x4
                                 Grapes</span><strong>+150</strong></div>
-                        <div class="win-entry"><img src="items/watermelon.png" alt="Watermelon"><span>x3
-                                Watermelon</span><strong>+60</strong></div>
-                        <div class="win-entry"><img src="items/strawberry.png" alt="Strawberry"><span>x4
-                                Strawberry</span><strong>+90</strong></div>
+                        <div class="win-entry"><img src="items/strawberry.png" alt="Strawberry"><span>x3
+                                Strawberry</span><strong>+100</strong></div>
                         <div class="win-entry"><img src="items/banana.png" alt="Banana"><span>x3
                                 Banana</span><strong>+40</strong></div>
-                        <div class="win-entry"><img src="items/orange.png" alt="Orange"><span>x5
-                                Orange</span><strong>+120</strong></div>
-                        <div class="win-entry"><img src="items/pear.png" alt="Pear"><span>x4
-                                Pear</span><strong>+75</strong>
-                        </div>
-                        <div class="win-entry"><img src="items/apple.png" alt="Apple"><span>x5
+
+                        <div class="win-entry"><img src="items/apple.png" alt="Apple"><span>x4
                                 Apple</span><strong>+130</strong></div>
-                        <div class="win-entry"><img src="items/lucky_seven.png" alt="Lucky Seven"><span>x3 Lucky
-                                Seven</span><strong>+300</strong></div>
+                        <div class="win-entry"><img src="items/strawberry.png" alt="Big win"><span>x5
+                                Big win</span><strong>+500</strong></div>
                     </div>
                 </div>
 
@@ -110,11 +102,22 @@
 
             <div class="right-side">
                 <img class="right-side-img" src="./bg-img/pngwing.com (2).png" alt="">
-
-
+                <button class="cheating-button">Cheat</button>
             </div>
         </div>
     </main>
+
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-bg">
+                <h1 class="modal-title"> BIG WIN! </h1>
+                <p class="modal-message">You won <span class="modal-amount">+500</span> coins</p>
+                <button onclick="closeModal()" class="modal-button">Collect</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

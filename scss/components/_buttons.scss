@@ -1,0 +1,33 @@
+.cheating-button {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+
+
+    background: #222;
+    color: #fffb00;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: monospace;
+    border: 2px solid #fffb00;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(255, 251, 0, 0.5), 0 0 8px rgba(255, 251, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.cheating-button:hover {
+  background: #f2ee05;
+  color: #222;
+  box-shadow: inset 0 0 8px rgba(255,255,255,0.7), 0 0 12px rgba(0,255,190,0.6);
+//   border: 2px solid #000;
+}
+
+.cheating-button:active {
+  transform: scale(0.95);
+}
+
+.start-button {
+    display: block;
+    margin: 1em auto;
+}

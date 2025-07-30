@@ -1,0 +1,39 @@
+.win-condition-info {
+    max-width: 450px;
+    margin: 25px auto;
+}
+
+
+.combos-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgba(255, 255, 255, 0.4);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+
+}
+
+.win-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    animation: popWin 0.4s ease;
+
+    img {
+        width: 2vw;
+        max-width: 30px;
+    }
+
+    span {
+        flex: 1;
+        font-size: 12px;
+    }
+
+    strong {
+        font-size: 14px;
+        color: #00ff88;
+    }
+}

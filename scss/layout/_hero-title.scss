@@ -1,0 +1,17 @@
+.hero-title {
+    font-family: "Ruslan Display", sans-serif;
+    font-size: 48px;
+    letter-spacing: 1.2rem;
+    height: var(--hero-title-height);
+    margin: 0px;
+    color: #fff;
+    text-align: center;
+    text-shadow:
+        0 0 5px rgb(255, 0, 230),
+        0 0 10px rgb(255, 0, 230),
+        0 0 20px rgb(255, 0, 230),
+        0 0 40px rgb(255, 0, 230),
+        0 0 80px rgb(255, 0, 230);
+    animation: flicker 2s infinite;
+
+}

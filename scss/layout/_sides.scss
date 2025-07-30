@@ -1,0 +1,22 @@
+.bgc-img-left {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    left: -150px;
+    bottom: -20px;
+    animation: floatAround 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+.right-side-img {
+    position: absolute;
+    object-fit: contain;
+    bottom: -100px;
+    right: -170px;
+    height: 85%;
+    animation: floatAround2 4s ease-in-out infinite;
+}
