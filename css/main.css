@@ -158,6 +158,12 @@ main {
   /*animation: wiggle 0.1s linear infinite;*/
 }
 
+.win-icon {
+  outline: 4px dashed lime !important;
+  background-color: black !important;
+  border-radius: 8px;
+}
+
 .outer-col {
   overflow-y: hidden;
   max-width: 100px;
@@ -801,6 +807,36 @@ main {
   to {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes winFlash {
+  from {
+    -webkit-filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #ff0) drop-shadow(0 0 15px #f0f);
+            filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #ff0) drop-shadow(0 0 15px #f0f);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-filter: drop-shadow(0 0 10px #ff0) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 30px #f0f);
+            filter: drop-shadow(0 0 10px #ff0) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 30px #f0f);
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+}
+
+@keyframes winFlash {
+  from {
+    -webkit-filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #ff0) drop-shadow(0 0 15px #f0f);
+            filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #ff0) drop-shadow(0 0 15px #f0f);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-filter: drop-shadow(0 0 10px #ff0) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 30px #f0f);
+            filter: drop-shadow(0 0 10px #ff0) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 30px #f0f);
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
   }
 }
 

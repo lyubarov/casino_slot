@@ -1,0 +1,11 @@
+@keyframes winFlash {
+    from {
+        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #ff0) drop-shadow(0 0 15px #f0f);
+        transform: scale(1.1);
+    }
+
+    to {
+        filter: drop-shadow(0 0 10px #ff0) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 30px #f0f);
+        transform: scale(1.15);
+    }
+}
