@@ -32,11 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 🔼 Повернення ручки назад (масштаб ×2)
         setTimeout(() => {
-            arm.style.top = "-50px";       // Було -25px
-            arm.style.height = "50%";     // Було 50%
-            knob.style.top = "-30px";      // Було -15px
-            knob.style.height = "32px";    // Було 16px
-            shadow.style.top = "26px";     // Було 13px
+            const isSmallScreen = window.innerWidth <= 400;
+
+            arm.style.top = isSmallScreen ? "-35px" : "-50px";
+            arm.style.height = isSmallScreen ? "50%" : "50%";
+
+            knob.style.top = isSmallScreen ? "-20px" : "-30px";
+            knob.style.height = isSmallScreen ? "24px" : "32px";
+
+            shadow.style.top = isSmallScreen ? "16px" : "26px";
 
             ring1Shadow.style.top = "0";
             ring1Shadow.style.opacity = "0";

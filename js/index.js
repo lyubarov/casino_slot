@@ -166,19 +166,24 @@ function checkWin() {
     counts[item] = (counts[item] || 0) + 1;
   });
 
+  let bestCombo = null;
+
   for (const combo of winningCombos) {
-    if ((counts[combo.name] || 0) >= combo.count) {
-      console.log(`🎉 WIN ${combo.count}x ${combo.name} → +${combo.reward}`);
-
-      // Підсвічуємо тільки відповідні центральні іконки
-      highlightActualCenterIcons(combo.name);
-
-      // Показуємо модалку після затримки
-      setTimeout(() => {
-        showModal(combo);
-      }, 700);
-
-      break;
+    const matched = (counts[combo.name] || 0) >= combo.count;
+    if (matched) {
+      // Якщо ще нічого не обрано або цей варіант вигідніший — оновлюємо
+      if (!bestCombo || combo.reward > bestCombo.reward) {
+        bestCombo = combo;
+      }
     }
   }
+
+  if (bestCombo) {
+    console.log(`🎉 WIN ${bestCombo.count}x ${bestCombo.name} → +${bestCombo.reward}`);
+    highlightActualCenterIcons(bestCombo.name);
+    setTimeout(() => {
+      showModal(bestCombo);
+    }, 700);
+  }
 }
+
